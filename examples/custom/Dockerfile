@@ -1,6 +1,6 @@
 FROM strapi/base
 
-WORKDIR /my-path
+WORKDIR /api1
 
 COPY ./package.json ./
 COPY ./yarn.lock ./
@@ -9,10 +9,10 @@ RUN yarn install
 
 COPY . .
 
-ENV NODE_ENV production
+ENV NODE_ENV development
 
 RUN yarn build
 
-EXPOSE 1337
+EXPOSE 2337
 
-CMD ["yarn", "start"]
+CMD ["yarn", "develop"]
